@@ -20,7 +20,7 @@ end
 # find_duplicates(array_one)
 # find_duplicates(array_two)
 
-# Algorithm adjusted in O(N) to find duplicate letters in an array
+# Algorithm adjusted in O(2N) to find duplicate letters in an array
 
 array_three = ["a", "b", "c", "d", "e", "f", "g"]
 array_four = ["a", "b", "c", "a", "e", "f", "g"]
@@ -29,23 +29,15 @@ array_six = [1, "a,", 2.0, 3, "Hello", "Hello", 7]
 
 def find_duplicate_letters(array)
   letter_hash = {}
-  steps = 0
   for i in array
     letter_hash[i] = 0
-    steps += 1
   end
   for i in array
     letter_hash[i] += 1
-    p letter_hash
-    steps += 1
     if letter_hash[i] > 1
-      p "true"
-      p "Steps: #{steps}"
       return true
     end
   end
-  p "false"
-  p "Steps: #{steps}"
   return false
 end
 
