@@ -25,11 +25,9 @@ greatestNumber(arr2)
 
 def greatest_number(array):
     greatest_number = array[0]
-    i = 0
-    while i < len(array) - 1:
-        if array[i] > greatest_number:
-            greatest_number = array[i]
-        i += 1
+    for i in array:
+        if i > greatest_number:
+            greatest_number = i
     print(greatest_number)
     return greatest_number
 
